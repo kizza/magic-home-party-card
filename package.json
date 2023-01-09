@@ -1,0 +1,27 @@
+{
+  "name": "MagicHomeParty",
+  "version": "0.0.1",
+  "description": "Have a party with your magic home lights",
+  "main": "index.ts",
+  "author": "Kizza",
+  "license": "MIT",
+  "scripts": {
+    "build": "rollup -c",
+    "start": "rollup -c -w"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^24.0.0",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "@rollup/plugin-terser": "^0.3.0",
+    "@rollup/plugin-typescript": "^8.3.2",
+    "cypress": "^12.3.0",
+    "prettier": "^2.8.2",
+    "rollup": "^2.72.1",
+    "rollup-plugin-serve": "^2.0.2",
+    "typescript": "^4.9.4"
+  },
+  "dependencies": {
+    "custom-card-helpers": "^1.9.0",
+    "lit": "^2.6.0"
+  }
+}
