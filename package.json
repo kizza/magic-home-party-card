@@ -7,7 +7,9 @@
   "license": "MIT",
   "scripts": {
     "build": "rollup -c",
-    "start": "rollup -c -w"
+    "start": "rollup -c -w",
+    "pretest": "rollup --config rollup.test.js",
+    "test": "cypress run --headless --browser chrome"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^24.0.0",
