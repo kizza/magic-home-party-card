@@ -1,0 +1,6 @@
+{
+  "name": "Magic Home Party (Custom Card)",
+  "filename": "magic-home-party.js",
+  "homeassistant": "2022.11.0",
+  "render_readme": true
+}
