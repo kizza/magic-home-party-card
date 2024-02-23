@@ -1,5 +1,5 @@
 import { fireEvent, HomeAssistant } from 'custom-card-helpers';
-import { html, LitElement } from 'lit';
+import { css, html, LitElement } from 'lit';
 import { customElement, property, state } from 'lit/decorators.js';
 import { EntityFilter } from '../types';
 import { loadHomeAsssistantComponents } from '../util';
@@ -73,6 +73,12 @@ export class EntitiesPicker extends LitElement {
     (event.currentTarget as any).value = ''; // Reset value of adding element
     this._updateEntities([...this.currentEntities, event.detail.value]);
   }
+
+  static styles = css`
+    :host {
+      overflow-x: hidden;
+    }
+  `
 }
 
 declare global {
