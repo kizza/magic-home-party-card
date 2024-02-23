@@ -7,6 +7,7 @@ export interface MagicHomePartyConfig extends LovelaceCardConfig {
   title?: string
   entities: string[]
   colours: Colour[]
+  speed: number
 }
 
 export type EntityFilter = (entity: {entity_id: string}) => boolean

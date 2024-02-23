@@ -59,6 +59,7 @@ describe('magic home party', () => {
           expect(hass.callService).to.be.calledWith('flux_led', 'set_custom_effect', {
             entity_id: cardConfig.entities,
             colors: cardConfig.colours,
+            speed_pct: 20,
             transition: 'gradual',
           });
         });

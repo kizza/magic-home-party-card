@@ -1,5 +1,9 @@
 import { css } from 'lit';
-import { Colours } from './types';
+import { Colours, MagicHomePartyConfig } from './types';
+
+export const DEFAULT_CONFIG: Partial<MagicHomePartyConfig> = {
+  speed: 20,
+}
 
 export const CARD_VERSION = '0.0.1';
 
