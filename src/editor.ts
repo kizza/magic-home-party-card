@@ -34,6 +34,8 @@ export class MagicHomePartyEditor extends LitElement {
     }
 
     return html`
+      Single click to preview a color. Double click to add-or-remove a color.
+
       <div style="display: flex; align-items: center;">
         <h3>Selected Colours</h3>
         <span class="copyButton" @click=${this._copyToClipboard}> Copy to clipboard </span>
