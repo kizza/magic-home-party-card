@@ -41,7 +41,7 @@ export class Chip extends LitElement {
   static styles = css`
     :host {
       border-radius: ${RADIUS};
-      cursor: default;
+      cursor: pointer;
       display: inline-block;
       padding: 0.5em 1em;
       white-space: nowrap;

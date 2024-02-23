@@ -140,7 +140,7 @@ export class MagicHomePartyEditor extends LitElement {
       top: 1px;
       margin-left: auto;
       color: var(--mdc-theme-primary, #6200ee);
-      cursor: default;
+      cursor: pointer;
       -webkit-font-smoothing: antialiased;
       font-family: var(
         --mdc-typography-button-font-family,
