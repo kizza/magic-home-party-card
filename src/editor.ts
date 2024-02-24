@@ -6,6 +6,7 @@ import './elements/chip';
 import './elements/entities-picker';
 import './elements/palette';
 import { ChipEvent, Colour, MagicHomePartyConfig } from './types';
+import { copyToClipboard } from './clipboard';
 
 const { values } = Object;
 
@@ -80,27 +81,7 @@ export class MagicHomePartyEditor extends LitElement {
 
   private _copyToClipboard() {
     const colours = this.selectedColours.map(colour => `  - [${colour.join(', ')}]`);
-
-    try {
-      navigator.clipboard.writeText(colours.join('\n'));
-    } catch(err) {
-      console.info('Failed to copy: ', err);
-      this._copyToClipboardAlt()
-    }
-  }
-
-  private _copyToClipboardAlt() {
-    const colours = this.selectedColours.map(colour => `  - [${colour.join(', ')}]`);
-    const input = document.createElement('textarea');
-    document.body.appendChild(input);
-    input.value = colours.join('\n');
-    input.focus();
-    input.select();
-
-    const isSuccessful = document.execCommand('copy');
-    if (!isSuccessful) {
-      console.error('Failed to copy text again');
-    }
+    copyToClipboard(colours.join('\n'))
   }
 
   private _setLight = (colour: Colour) =>
