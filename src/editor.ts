@@ -37,6 +37,8 @@ export class MagicHomePartyEditor extends LitElement {
     }
 
     return html`
+      Single click to preview a color. Double click to add-or-remove a color.
+
       <div style="display: flex; align-items: center;">
         <h3>Selected Colours</h3>
         <span class="copyButton" @click=${this._copyToClipboard}> Copy to clipboard </span>
@@ -78,7 +80,27 @@ export class MagicHomePartyEditor extends LitElement {
 
   private _copyToClipboard() {
     const colours = this.selectedColours.map(colour => `  - [${colour.join(', ')}]`);
-    navigator.clipboard.writeText(colours.join('\n'));
+
+    try {
+      navigator.clipboard.writeText(colours.join('\n'));
+    } catch(err) {
+      console.info('Failed to copy: ', err);
+      this._copyToClipboardAlt()
+    }
+  }
+
+  private _copyToClipboardAlt() {
+    const colours = this.selectedColours.map(colour => `  - [${colour.join(', ')}]`);
+    const input = document.createElement('textarea');
+    document.body.appendChild(input);
+    input.value = colours.join('\n');
+    input.focus();
+    input.select();
+
+    const isSuccessful = document.execCommand('copy');
+    if (!isSuccessful) {
+      console.error('Failed to copy text again');
+    }
   }
 
   private _setLight = (colour: Colour) =>
@@ -136,7 +158,7 @@ export class MagicHomePartyEditor extends LitElement {
       top: 1px;
       margin-left: auto;
       color: var(--mdc-theme-primary, #6200ee);
-      cursor: default;
+      cursor: pointer;
       -webkit-font-smoothing: antialiased;
       font-family: var(
         --mdc-typography-button-font-family,
