@@ -13,6 +13,15 @@ Single clicking a colour chip will set all the configured lights to this colour 
 
 ## Installation
 
+### HACS
+Magic Home Party Card is available in [HACS][hacs] (Home Assistant Community Store).
+
+1. Install HACS if you don't have it already
+2. Open HACS in Home Assistant
+3. Go to "Frontend" section
+4. Click button with "+" icon
+5. Search for "Magic Home Party Card"
+
 ### Manual
 1. Download `magic-home-party-card.js` file from the [latest-release](https://github.com/kizza/magic-home-party-card/releases/latest).
 2. Put magic-home-party.js file into your `config/www` folder.
