@@ -1,7 +1,7 @@
 import { fireEvent, HomeAssistant } from 'custom-card-helpers';
 import { css, html, LitElement } from 'lit';
 import { customElement, property, state } from 'lit/decorators.js';
-import { colours } from './const';
+import { colours, DEFAULT_CONFIG } from './const';
 import './elements/chip';
 import './elements/entities-picker';
 import './elements/palette';
@@ -16,9 +16,11 @@ export class MagicHomePartyEditor extends LitElement {
   @state() private config!: MagicHomePartyConfig;
   @state() private selectedColours: Colour[] = [];
   @state() private selectedEntities: string[] = [];
+  @state() private speed: number = 50;
 
   public setConfig(config: MagicHomePartyConfig) {
     this.config = {
+      ...DEFAULT_CONFIG,
       ...config,
       colours: config.colours || [],
       entities: config.entities || [],
@@ -26,6 +28,7 @@ export class MagicHomePartyEditor extends LitElement {
 
     this.selectedColours = this.config.colours;
     this.selectedEntities = this.config.entities;
+    this.speed = this.config.speed;
   }
 
   public render() {
@@ -62,6 +65,14 @@ export class MagicHomePartyEditor extends LitElement {
         @value-changed=${this._entitiesChanged}
       >
       </magic-home-party-entities-picker>
+
+      <h3>Transition speed</h3>
+      <ha-selector
+        .label="Speed"
+        .selector=${{number: {min: 1, max: 100, step: 1, mode: "slider", unit_of_measurement: "%"}}}
+        .value=${this.speed}
+        @value-changed=${this._speedChanged}
+      ></ha-selector>
     `;
   }
 
@@ -92,11 +103,18 @@ export class MagicHomePartyEditor extends LitElement {
     this._updateConfig();
   };
 
+  private _speedChanged(event: any) {
+    event.stopPropagation();
+    this.speed = event.detail.value;
+    this._updateConfig();
+  }
+
   private _updateConfig() {
     const newConfig = {
       ...this.config,
       colours: this.selectedColours,
       entities: this.selectedEntities,
+      speed: this.speed,
     };
 
     this.config = newConfig;

@@ -1,7 +1,7 @@
 import { HomeAssistant, LovelaceCardEditor } from 'custom-card-helpers';
 import { css, html, LitElement } from 'lit';
 import { customElement, property, state } from 'lit/decorators.js';
-import { CARD_VERSION, RADIUS } from './const';
+import { CARD_VERSION, DEFAULT_CONFIG, RADIUS } from './const';
 import './elements/palette';
 import { MagicHomePartyConfig } from './types';
 import { labelColour, linearGradient } from './util';
@@ -28,6 +28,7 @@ export class MagicHomeParty extends LitElement {
 
   setConfig(config: MagicHomePartyConfig) {
     this.config = {
+      ...DEFAULT_CONFIG,
       ...config,
       title: '',
       entities: config.entities || [],
@@ -82,6 +83,7 @@ export class MagicHomeParty extends LitElement {
     this.hass.callService('flux_led', 'set_custom_effect', {
       entity_id: this.config.entities,
       colors: this.config.colours,
+      speed_pct: this.config.speed,
       transition: 'gradual',
     });
 
