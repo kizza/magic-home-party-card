@@ -1,14 +1,24 @@
 import { LovelaceCardConfig } from "custom-card-helpers";
 
+export type NonUndefined<T> = T extends undefined ? never : T;
+
 export type DoubleClickHandler = (doubleClicked: boolean) => void
 
-export interface MagicHomePartyConfig extends LovelaceCardConfig {
+export type BaseConfig = LovelaceCardConfig & {
   type: "custom:magic-home-party-card",
-  title?: string
-  entities: string[]
+}
+
+export interface MagicHomePartyConfig extends BaseConfig {
+  targets: HassServiceTarget
   colours: Colour[]
   speed: number
 }
+
+export type HassServiceTarget = {
+  entity_id?: string | string[];
+  device_id?: string | string[];
+  area_id?: string | string[];
+};
 
 export type EntityFilter = (entity: {entity_id: string}) => boolean
 

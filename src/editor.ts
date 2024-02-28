@@ -1,12 +1,13 @@
 import { fireEvent, HomeAssistant } from 'custom-card-helpers';
 import { css, html, LitElement } from 'lit';
 import { customElement, property, state } from 'lit/decorators.js';
-import { colours, DEFAULT_CONFIG } from './const';
+import { colours } from './const';
 import './elements/chip';
-import './elements/entities-picker';
+import './elements/targets-picker';
 import './elements/palette';
-import { ChipEvent, Colour, MagicHomePartyConfig } from './types';
+import { BaseConfig, ChipEvent, Colour, MagicHomePartyConfig } from './types';
 import { copyToClipboard } from './clipboard';
+import { parseConfig } from './config/parse';
 
 const { values } = Object;
 
@@ -16,19 +17,11 @@ export class MagicHomePartyEditor extends LitElement {
 
   @state() private config!: MagicHomePartyConfig;
   @state() private selectedColours: Colour[] = [];
-  @state() private selectedEntities: string[] = [];
-  @state() private speed: number = 50;
+  @state() private speed: number | undefined = undefined;
 
-  public setConfig(config: MagicHomePartyConfig) {
-    this.config = {
-      ...DEFAULT_CONFIG,
-      ...config,
-      colours: config.colours || [],
-      entities: config.entities || [],
-    };
-
+  public setConfig(config: BaseConfig) {
+    this.config = parseConfig(config)
     this.selectedColours = this.config.colours;
-    this.selectedEntities = this.config.entities;
     this.speed = this.config.speed;
   }
 
@@ -41,7 +34,7 @@ export class MagicHomePartyEditor extends LitElement {
       Single click to preview a color. Double click to add-or-remove a color.
 
       <div style="display: flex; align-items: center;">
-        <h3>Selected Colours</h3>
+        <h3>Selected colours</h3>
         <span class="copyButton" @click=${this._copyToClipboard}> Copy to clipboard </span>
       </div>
       <magic-home-party-palette
@@ -60,14 +53,14 @@ export class MagicHomePartyEditor extends LitElement {
         @doubleClick="${(e: ChipEvent) => this._addChip(e.detail.colour)}"
       ></magic-home-party-palette>
 
-      <h3>Selected Lights</h3>
-      <magic-home-party-entities-picker
+      <h3>Selected lights</h3>
+      <magic-home-party-targets-picker
         .
         .hass=${this.hass}
-        .value=${this.config.entities}
-        @value-changed=${this._entitiesChanged}
+        .value=${this.config.targets}
+        @value-changed=${this._targetsChanged}
       >
-      </magic-home-party-entities-picker>
+      </magic-home-party-targets-picker>
 
       <h3>Transition speed</h3>
       <ha-selector
@@ -86,13 +79,13 @@ export class MagicHomePartyEditor extends LitElement {
 
   private _setLight = (colour: Colour) =>
     this.hass.callService('light', 'turn_on', {
-      entity_id: this.selectedEntities,
+      target: this.config.targets,
       rgb_color: colour,
     });
 
-  private _entitiesChanged(event: any) {
+  private _targetsChanged(event: any) {
     event.stopPropagation();
-    this.selectedEntities = [...event.detail.value];
+    this.config.targets = {...event.detail.value};
     this._updateConfig();
   }
 
@@ -116,7 +109,6 @@ export class MagicHomePartyEditor extends LitElement {
     const newConfig = {
       ...this.config,
       colours: this.selectedColours,
-      entities: this.selectedEntities,
       speed: this.speed,
     };
 

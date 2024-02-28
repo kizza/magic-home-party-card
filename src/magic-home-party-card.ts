@@ -1,10 +1,13 @@
 import { HomeAssistant, LovelaceCardEditor } from 'custom-card-helpers';
 import { css, html, LitElement } from 'lit';
 import { customElement, property, state } from 'lit/decorators.js';
-import { CARD_VERSION, DEFAULT_CONFIG, RADIUS } from './const';
+import { CARD_VERSION, RADIUS } from './const';
 import './elements/palette';
-import { MagicHomePartyConfig } from './types';
-import { labelColour, linearGradient } from './util';
+import { BaseConfig, MagicHomePartyConfig } from './types';
+import { toFriendlyName, toState } from './config/lookup';
+import { ensureArray, labelColour, linearGradient } from './util';
+import { parseConfig } from './config/parse';
+import { mdiDevices, mdiLightbulb, mdiSofa } from '@mdi/js'
 
 console.info(
   `%c  MAGIC-HOME-PARTY-CARD \n%c  Version ${CARD_VERSION}    `,
@@ -26,13 +29,8 @@ export class MagicHomeParty extends LitElement {
 
   @state() private config!: MagicHomePartyConfig;
 
-  setConfig(config: MagicHomePartyConfig) {
-    this.config = {
-      ...DEFAULT_CONFIG,
-      ...config,
-      title: '',
-      entities: config.entities || [],
-    };
+  setConfig(config: BaseConfig) {
+    this.config = parseConfig(config)
   }
 
   render() {
@@ -45,22 +43,17 @@ export class MagicHomeParty extends LitElement {
     }
 
     const foreground = labelColour(this.config.colours[0]);
-
-    const entitiesHtml = this.stateEntities.map(
-      stateEntity =>
-        html`<div class="entity">
-          <state-badge .stateObj=${stateEntity} style="color: ${foreground};"></state-badge>
-          ${stateEntity.attributes.friendly_name || stateEntity.entity_id}
-        </div>`
-    );
-
     return html`
       <ha-card @click=${this.playEffect}>
         <div
           class="gradient"
           style="color: ${foreground}; background: ${linearGradient(this.config.colours)}"
         >
-          <div class="entities">${entitiesHtml}</div>
+          <div class="targets">
+            ${this._friendlyAreaNames()}
+            ${this._friendlyDeviceNames()}
+            ${this._friendlyEntityNames()}
+          </div>
         </div>
       </ha-card>
     `;
@@ -71,17 +64,38 @@ export class MagicHomeParty extends LitElement {
     return document.createElement('magic-home-party-card-editor') as LovelaceCardEditor;
   }
 
-  static getStubConfig() {
-    return { entities: [] };
-  }
+  private _friendlyAreaNames = () =>
+    ensureArray(this.config.targets.area_id)
+      .map(toFriendlyName('area_id', this.hass))
+      .map(name => html`<div class="target">
+        ${this._icon(mdiSofa)} ${name}
+      </div>`)
 
-  private get stateEntities() {
-    return this.config.entities.map(entity => this.hass.states[entity]);
+  private _friendlyDeviceNames = () =>
+    ensureArray(this.config.targets.device_id)
+      .map(toFriendlyName('device_id', this.hass))
+      .map(name => html`<div class="target">
+        ${this._icon(mdiDevices)} ${name}
+      </div>`)
+
+  private _friendlyEntityNames = () =>
+    ensureArray(this.config.targets.entity_id)
+      .map(toState(this.hass))
+      .map(state => html`<div class="target">
+        ${this._icon(mdiLightbulb)} ${state.attributes.friendly_name || state.entity_id}
+      </div>`)
+
+  private _icon(path: string) {
+    return html`<div class="icon">
+      <svg viewBox="0 0 24 24" width="100%" height="100%" role="presentation">
+        <path d=${path} style="fill: currentcolor;"></path>
+      </svg>
+    </div>`
   }
 
   private playEffect = () =>
     this.hass.callService('flux_led', 'set_custom_effect', {
-      entity_id: this.config.entities,
+      ...this.config.targets,
       colors: this.config.colours,
       speed_pct: this.config.speed,
       transition: 'gradual',
@@ -96,17 +110,24 @@ export class MagicHomeParty extends LitElement {
       color: #fff;
     }
 
-    .entities {
-      padding: 1em 0.5em;
+    .targets {
+      padding: 1em 1em;
       display: flex;
       flex-wrap: wrap;
     }
 
-    .entity {
+    .target {
       display: flex;
       align-items: center;
       border-radius: ${RADIUS};
       max-height: 1.6em;
+      margin-right: 6px;
+    }
+
+    .icon {
+      width: 20px;
+      height: 20px;
+      margin-right: 4px;
     }
   `;
 }
