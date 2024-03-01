@@ -10,9 +10,12 @@ import { parseConfig } from './config/parse';
 import { mdiDevices, mdiLightbulb, mdiSofa } from '@mdi/js'
 
 console.info(
-  `%c  MAGIC-HOME-PARTY-CARD \n%c  Version ${CARD_VERSION}    `,
-  'color: white; font-weight: bold; background: purple',
-  'color: white; font-weight: bold; background: dimgray'
+  `%c Magic %c Home %c Party %c Card %c ${CARD_VERSION} `,
+  'color: #222; font-weight: bold; background: #90f1ef',
+  'color: #222; font-weight: bold; background: #ffd6e0',
+  'color: #222; font-weight: bold; background: #ffef9f',
+  'color: #222; font-weight: bold; background: #c1fba4',
+  'color: #ff70a6; font-weight: bold;',
 );
 
 // Register to UI picker

@@ -1,7 +1,7 @@
 import { css } from 'lit';
 import { Colours } from './types';
 
-export const CARD_VERSION = '0.1.3';
+export const CARD_VERSION = '0.1.4';
 
 export const RADIUS = css`0.8em`;
 
