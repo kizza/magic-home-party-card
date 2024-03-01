@@ -11,7 +11,7 @@ export type BaseConfig = LovelaceCardConfig & {
 export interface MagicHomePartyConfig extends BaseConfig {
   targets: HassServiceTarget
   colours: Colour[]
-  speed: number
+  speed?: number
 }
 
 export type HassServiceTarget = {
