@@ -5,6 +5,20 @@ describe('magic home party', () => {
   const lime = [0, 255, 0];
   const yellow = [255, 255, 0];
 
+  const hassAreas = () => ({
+    areas: {
+      kitchen: { name: "Kitchen" },
+      bathroom: { name: "Bathroom" },
+    }
+  })
+
+  const hassDevices = () => ({
+    devices: {
+      123456: { name: "***", name_by_user: "Dishwasher" },
+      ABCDEF: { name: "Fan" },
+    }
+  })
+
   const hassStates = () => ({
     states: {
       foo: {
@@ -29,6 +43,65 @@ describe('magic home party', () => {
       .waitForCustomElement('magic-home-party-card')
   );
 
+  describe('cofiguration', () => {
+    const hass = {
+      ...hassAreas(),
+      ...hassDevices(),
+      ...hassStates(),
+    };
+
+    const withConfig = (config) =>
+      cy.setupCustomCard('magic-home-party-card', {
+        colours: [red, lime],
+        ...config,
+      }, hass).get('.targets')
+
+    it('resolves legacy entities', () => {
+      withConfig({ one: "one", entities: ['foo', 'bar']})
+        .should('contain', 'Foo light')
+        .and('contain', 'Bar light')
+    });
+
+    describe("entity_id targets", () => {
+      it('resolves a single entity_id', () => {
+        withConfig({ two: "two", targets: {entity_id: 'foo'}})
+          .should('contain', 'Foo light')
+      });
+
+      it('resolves a multiple entity_ids', () => {
+        withConfig({ targets: {entity_id: ['foo', 'bar']}})
+          .should('contain', 'Foo light')
+          .and('contain', 'Bar light')
+      });
+    })
+
+    describe("device_id targets", () => {
+      it('resolves a single device_id', () => {
+        withConfig({ two: "two", targets: {device_id: '123456'}})
+          .should('contain', 'Dishwasher')
+      });
+
+      it('resolves a multiple device_ids', () => {
+        withConfig({ two: "two", targets: {device_id: ['123456', 'ABCDEF']}})
+          .should('contain', 'Dishwasher')
+          .and('contain', 'Fan')
+      });
+    })
+
+    describe("area_id targets", () => {
+      it('resolves a single area_id', () => {
+        withConfig({ two: "two", targets: {area_id: 'kitchen'}})
+          .should('contain', 'Kitchen')
+      });
+
+      it('resolves a multiple area_id', () => {
+        withConfig({ two: "two", targets: {area_id: ['kitchen', 'bathroom']}})
+          .should('contain', 'Kitchen')
+          .and('contain', 'Bathroom')
+      });
+    })
+  });
+
   describe('card', () => {
     it('renders a gradient', () => {
       const colours = [red, lime];
@@ -43,12 +116,14 @@ describe('magic home party', () => {
 
     it('plays the effect on click', () => {
       const hass = {
+        ...hassAreas(),
         ...hassStates(),
         callService: cy.stub(),
       };
 
       const cardConfig = {
         entities: Object.keys(hass.states),
+        targets: { area_id: 'kitchen', entity_id: ['foo', 'bar'] },
         colours: [red, lime],
       };
 
@@ -57,7 +132,7 @@ describe('magic home party', () => {
         .click()
         .then(() => {
           expect(hass.callService).to.be.calledWith('flux_led', 'set_custom_effect', {
-            entity_id: cardConfig.entities,
+            ...cardConfig.targets,
             colors: cardConfig.colours,
             speed_pct: 20,
             transition: 'gradual',
@@ -96,7 +171,7 @@ describe('magic home party', () => {
             .should(
               () => {
                 expect(hass.callService).to.be.calledWith('light', 'turn_on', {
-                  entity_id: cardConfig.entities,
+                  target: {entity_id: cardConfig.entities},
                   rgb_color: yellow,
                 });
               },

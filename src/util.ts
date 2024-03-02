@@ -1,7 +1,8 @@
 import { css } from 'lit';
 import { colours } from './const';
-import { Colour, DoubleClickHandler } from './types';
+import { Colour, DoubleClickHandler, NonUndefined } from './types';
 
+// Availalbe components via Array.from(customElements.l.keys()).sort().join(", ");
 export const loadHomeAsssistantComponents = () => {
   if (!customElements.get('ha-entity-picker')) {
     (customElements.get('hui-entities-card') as any)?.getConfigElement();
@@ -27,6 +28,13 @@ export const labelColour = (background: Colour) => {
     return css`rgba(10, 10, 10, 0.6)`;
   }
 };
+
+type EnsureArray = {
+  (value: undefined): undefined;
+  <T>(value: T | T[]): NonUndefined<T>[];
+};
+export const ensureArray: EnsureArray = <T>(value: T | T[]) =>
+  (value === undefined || Array.isArray(value)) ? value || [] : [value]
 
 export const DOUBLE_CLICK_TIMEOUT = 250;
 
