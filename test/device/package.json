@@ -1,0 +1,12 @@
+{
+  "name": "device",
+  "version": "1.0.0",
+  "description": "Emulating a magic home device",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "dgram": "^1.0.1",
+    "express": "^4.18.2",
+    "socket.io": "^4.7.4"
+  }
+}

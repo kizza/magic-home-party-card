@@ -1,0 +1,95 @@
+{
+  "version": 1,
+  "minor_version": 4,
+  "key": "core.device_registry",
+  "data": {
+    "devices": [
+      {
+        "area_id": "living_room",
+        "config_entries": [
+          "98d2747648a3cb5f9e0e6e6ae35a87c9"
+        ],
+        "configuration_url": null,
+        "connections": [
+          [
+            "mac",
+            "b4:e8:42:b3:cc:38"
+          ]
+        ],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": "AK001-ZJ2147",
+        "id": "c9ddb04faa585d746b6f2863c6dd342d",
+        "identifiers": [
+          [
+            "flux_led",
+            "98d2747648a3cb5f9e0e6e6ae35a87c9"
+          ]
+        ],
+        "manufacturer": "Zengge",
+        "model": "Controller RGBW (0x06)",
+        "name_by_user": null,
+        "name": "First magic home light",
+        "serial_number": null,
+        "sw_version": "3.31",
+        "via_device_id": null
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "9a8e75591200690e446f4acfea9f2057"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": "service",
+        "hw_version": null,
+        "id": "d98dd1f68219e9d63be86353478d5c42",
+        "identifiers": [
+          [
+            "sun",
+            "9a8e75591200690e446f4acfea9f2057"
+          ]
+        ],
+        "manufacturer": null,
+        "model": null,
+        "name_by_user": null,
+        "name": "Sun",
+        "serial_number": null,
+        "sw_version": null,
+        "via_device_id": null
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "235943957e397cd0ea4d4a8745e4b217"
+        ],
+        "configuration_url": null,
+        "connections": [
+          [
+            "mac",
+            "b4:e8:42:b3:cc:30"
+          ]
+        ],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": "AK001-ZJ2147",
+        "id": "42b167768be2030d355dba9e2fa480ef",
+        "identifiers": [
+          [
+            "flux_led",
+            "235943957e397cd0ea4d4a8745e4b217"
+          ]
+        ],
+        "manufacturer": "Zengge",
+        "model": "Controller RGBW (0x06)",
+        "name_by_user": null,
+        "name": "Controller RGBW B3CC30",
+        "serial_number": null,
+        "sw_version": "3.31",
+        "via_device_id": null
+      }
+    ],
+    "deleted_devices": []
+  }
+}

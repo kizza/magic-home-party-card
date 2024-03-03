@@ -32,15 +32,6 @@ Cypress.Commands.add(
 );
 
 Cypress.Commands.add(
-  'when',
-  (query: string, foundRoute, notFoundRoute) =>
-  cy.get('body').then($body => {
-    console.log("Find result is", $body.find(query), $body.find(query).length)
-    return $body.find(query).length > 0 ? foundRoute() : notFoundRoute()
-  })
-);
-
-Cypress.Commands.add(
   'setupCustomCard',
   (tagName: string, config: Record<string, unknown>, hass?: any) =>
     cy

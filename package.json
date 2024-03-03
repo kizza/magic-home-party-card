@@ -9,7 +9,10 @@
     "build": "rollup -c",
     "start": "rollup -c -w",
     "pretest": "rollup --config rollup.test.js",
-    "test": "cypress run --headless --browser chrome"
+    "test": "cypress run --headless --browser chrome",
+    "watch": "cypress open",
+    "up": "docker compose --file=test/docker-compose.yml up --build --renew-anon-volumes --abort-on-container-exit --exit-code-from homeassistant",
+    "down": "docker compose --file=test/docker-compose.yml down"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^24.0.0",

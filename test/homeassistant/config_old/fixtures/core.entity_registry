@@ -1,0 +1,86 @@
+{
+  "version": 1,
+  "minor_version": 12,
+  "key": "core.entity_registry",
+  "data": {
+    "entities": [
+      {
+        "aliases": [],
+        "area_id": null,
+        "capabilities": {
+          "effect_list": [
+            "blue_fade"
+          ],
+          "supported_color_modes": [
+            "rgb",
+            "white"
+          ]
+        },
+        "config_entry_id": "98d2747648a3cb5f9e0e6e6ae35a87c9",
+        "device_class": null,
+        "device_id": "c9ddb04faa585d746b6f2863c6dd342d",
+        "disabled_by": null,
+        "entity_category": null,
+        "entity_id": "light.first_magic_light",
+        "hidden_by": null,
+        "icon": null,
+        "id": "f903a3ff4c812095a26a5a617951935b",
+        "has_entity_name": true,
+        "name": null,
+        "options": {
+          "conversation": {
+            "should_expose": true
+          }
+        },
+        "original_device_class": null,
+        "original_icon": null,
+        "original_name": null,
+        "platform": "flux_led",
+        "supported_features": 36,
+        "translation_key": null,
+        "unique_id": "b4:e8:42:b3:cc:38",
+        "previous_unique_id": null,
+        "unit_of_measurement": null
+      },
+      {
+        "aliases": [],
+        "area_id": null,
+        "capabilities": {
+          "effect_list": [
+            "blue_fade"
+          ],
+          "supported_color_modes": [
+            "rgb",
+            "white"
+          ]
+        },
+        "config_entry_id": "98d2747648a3cb5f9e0e6e6ae35a87c8",
+        "device_class": null,
+        "device_id": "c9ddb04faa585d746b6f2863c6dd342c",
+        "disabled_by": null,
+        "entity_category": null,
+        "entity_id": "light.second_magic_light",
+        "hidden_by": null,
+        "icon": null,
+        "id": "f903a3ff4c812095a26a5a617951935a",
+        "has_entity_name": true,
+        "name": null,
+        "options": {
+          "conversation": {
+            "should_expose": true
+          }
+        },
+        "original_device_class": null,
+        "original_icon": null,
+        "original_name": null,
+        "platform": "flux_led",
+        "supported_features": 36,
+        "translation_key": null,
+        "unique_id": "b4:e8:42:b3:cc:37",
+        "previous_unique_id": null,
+        "unit_of_measurement": null
+      }
+    ],
+    "deleted_entities": []
+  }
+}

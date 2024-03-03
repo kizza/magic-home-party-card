@@ -1,0 +1,16 @@
+default_config:
+
+logger:
+  default: warning
+  logs:
+    flux_led: debug
+
+# frontend:
+#   extra_module_url:
+#     - http://localhost:4000/mushroom.js
+
+# lovelace:
+  # mode: yaml
+  # resources:
+  #   - url: /local/magic-home-party-card.js
+  #     type: module

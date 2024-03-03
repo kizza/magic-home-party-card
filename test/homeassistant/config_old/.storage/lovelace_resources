@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace_resources",
+  "data": {
+    "items": [
+      {
+        "id": "684eafef72224d0b89bfdeb6422881fb",
+        "url": "/local/magic-home-party-card.js",
+        "type": "module"
+      }
+    ]
+  }
+}

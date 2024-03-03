@@ -1,0 +1,768 @@
+{
+  "version": 1,
+  "minor_version": 12,
+  "key": "core.entity_registry",
+  "data": {
+    "entities": [
+      {
+        "aliases": [],
+        "area_id": null,
+        "capabilities": {
+          "effect_list": [
+            "blue_fade",
+            "blue_strobe",
+            "colorjump",
+            "colorloop",
+            "colorstrobe",
+            "cyan_fade",
+            "cyan_strobe",
+            "cycle_rgb",
+            "cycle_seven_colors",
+            "gb_cross_fade",
+            "green_fade",
+            "green_strobe",
+            "purple_fade",
+            "purple_strobe",
+            "rb_cross_fade",
+            "red_fade",
+            "red_strobe",
+            "rg_cross_fade",
+            "rgb_cross_fade",
+            "white_fade",
+            "white_strobe",
+            "yellow_fade",
+            "yellow_strobe",
+            "random"
+          ],
+          "supported_color_modes": [
+            "rgb",
+            "white"
+          ]
+        },
+        "config_entry_id": "98d2747648a3cb5f9e0e6e6ae35a87c9",
+        "device_class": null,
+        "device_id": "c9ddb04faa585d746b6f2863c6dd342d",
+        "disabled_by": null,
+        "entity_category": null,
+        "entity_id": "light.first_magic_light",
+        "hidden_by": null,
+        "icon": null,
+        "id": "f903a3ff4c812095a26a5a617951935b",
+        "has_entity_name": true,
+        "name": null,
+        "options": {
+          "conversation": {
+            "should_expose": true
+          }
+        },
+        "original_device_class": null,
+        "original_icon": null,
+        "original_name": null,
+        "platform": "flux_led",
+        "supported_features": 36,
+        "translation_key": null,
+        "unique_id": "b4:e8:42:b3:cc:38",
+        "previous_unique_id": null,
+        "unit_of_measurement": null
+      },
+      {
+        "aliases": [],
+        "area_id": null,
+        "capabilities": null,
+        "config_entry_id": null,
+        "device_class": null,
+        "device_id": null,
+        "disabled_by": null,
+        "entity_category": null,
+        "entity_id": "person.user",
+        "hidden_by": null,
+        "icon": null,
+        "id": "e872cd7da1ada8b8f7f4c49e0a62c935",
+        "has_entity_name": false,
+        "name": null,
+        "options": {
+          "conversation": {
+            "should_expose": false
+          }
+        },
+        "original_device_class": null,
+        "original_icon": null,
+        "original_name": "User",
+        "platform": "person",
+        "supported_features": 0,
+        "translation_key": null,
+        "unique_id": "user",
+        "previous_unique_id": null,
+        "unit_of_measurement": null
+      },
+      {
+        "aliases": [],
+        "area_id": null,
+        "capabilities": null,
+        "config_entry_id": "9a8e75591200690e446f4acfea9f2057",
+        "device_class": null,
+        "device_id": "d98dd1f68219e9d63be86353478d5c42",
+        "disabled_by": null,
+        "entity_category": "diagnostic",
+        "entity_id": "sensor.sun_next_dawn",
+        "hidden_by": null,
+        "icon": null,
+        "id": "26425e40edae5aca3421f1306780fd34",
+        "has_entity_name": true,
+        "name": null,
+        "options": {
+          "conversation": {
+            "should_expose": false
+          }
+        },
+        "original_device_class": "timestamp",
+        "original_icon": null,
+        "original_name": "Next dawn",
+        "platform": "sun",
+        "supported_features": 0,
+        "translation_key": "next_dawn",
+        "unique_id": "9a8e75591200690e446f4acfea9f2057-next_dawn",
+        "previous_unique_id": null,
+        "unit_of_measurement": null
+      },
+      {
+        "aliases": [],
+        "area_id": null,
+        "capabilities": null,
+        "config_entry_id": "9a8e75591200690e446f4acfea9f2057",
+        "device_class": null,
+        "device_id": "d98dd1f68219e9d63be86353478d5c42",
+        "disabled_by": null,
+        "entity_category": "diagnostic",
+        "entity_id": "sensor.sun_next_dusk",
+        "hidden_by": null,
+        "icon": null,
+        "id": "c6cd4cbb116f178ed347097ca7676633",
+        "has_entity_name": true,
+        "name": null,
+        "options": {
+          "conversation": {
+            "should_expose": false
+          }
+        },
+        "original_device_class": "timestamp",
+        "original_icon": null,
+        "original_name": "Next dusk",
+        "platform": "sun",
+        "supported_features": 0,
+        "translation_key": "next_dusk",
+        "unique_id": "9a8e75591200690e446f4acfea9f2057-next_dusk",
+        "previous_unique_id": null,
+        "unit_of_measurement": null
+      },
+      {
+        "aliases": [],
+        "area_id": null,
+        "capabilities": null,
+        "config_entry_id": "9a8e75591200690e446f4acfea9f2057",
+        "device_class": null,
+        "device_id": "d98dd1f68219e9d63be86353478d5c42",
+        "disabled_by": null,
+        "entity_category": "diagnostic",
+        "entity_id": "sensor.sun_next_midnight",
+        "hidden_by": null,
+        "icon": null,
+        "id": "39de2c2ea530f3c6e20c51b4cb6019bf",
+        "has_entity_name": true,
+        "name": null,
+        "options": {
+          "conversation": {
+            "should_expose": false
+          }
+        },
+        "original_device_class": "timestamp",
+        "original_icon": null,
+        "original_name": "Next midnight",
+        "platform": "sun",
+        "supported_features": 0,
+        "translation_key": "next_midnight",
+        "unique_id": "9a8e75591200690e446f4acfea9f2057-next_midnight",
+        "previous_unique_id": null,
+        "unit_of_measurement": null
+      },
+      {
+        "aliases": [],
+        "area_id": null,
+        "capabilities": null,
+        "config_entry_id": "9a8e75591200690e446f4acfea9f2057",
+        "device_class": null,
+        "device_id": "d98dd1f68219e9d63be86353478d5c42",
+        "disabled_by": null,
+        "entity_category": "diagnostic",
+        "entity_id": "sensor.sun_next_noon",
+        "hidden_by": null,
+        "icon": null,
+        "id": "9e48726ac6998ab5f6f1307a7db20892",
+        "has_entity_name": true,
+        "name": null,
+        "options": {
+          "conversation": {
+            "should_expose": false
+          }
+        },
+        "original_device_class": "timestamp",
+        "original_icon": null,
+        "original_name": "Next noon",
+        "platform": "sun",
+        "supported_features": 0,
+        "translation_key": "next_noon",
+        "unique_id": "9a8e75591200690e446f4acfea9f2057-next_noon",
+        "previous_unique_id": null,
+        "unit_of_measurement": null
+      },
+      {
+        "aliases": [],
+        "area_id": null,
+        "capabilities": null,
+        "config_entry_id": "9a8e75591200690e446f4acfea9f2057",
+        "device_class": null,
+        "device_id": "d98dd1f68219e9d63be86353478d5c42",
+        "disabled_by": null,
+        "entity_category": "diagnostic",
+        "entity_id": "sensor.sun_next_rising",
+        "hidden_by": null,
+        "icon": null,
+        "id": "35e2cd1c8c1aba36b8e7df51853f70ee",
+        "has_entity_name": true,
+        "name": null,
+        "options": {
+          "conversation": {
+            "should_expose": false
+          }
+        },
+        "original_device_class": "timestamp",
+        "original_icon": null,
+        "original_name": "Next rising",
+        "platform": "sun",
+        "supported_features": 0,
+        "translation_key": "next_rising",
+        "unique_id": "9a8e75591200690e446f4acfea9f2057-next_rising",
+        "previous_unique_id": null,
+        "unit_of_measurement": null
+      },
+      {
+        "aliases": [],
+        "area_id": null,
+        "capabilities": null,
+        "config_entry_id": "9a8e75591200690e446f4acfea9f2057",
+        "device_class": null,
+        "device_id": "d98dd1f68219e9d63be86353478d5c42",
+        "disabled_by": null,
+        "entity_category": "diagnostic",
+        "entity_id": "sensor.sun_next_setting",
+        "hidden_by": null,
+        "icon": null,
+        "id": "07f704cfd133397e3c76f4cf1924611d",
+        "has_entity_name": true,
+        "name": null,
+        "options": {
+          "conversation": {
+            "should_expose": false
+          }
+        },
+        "original_device_class": "timestamp",
+        "original_icon": null,
+        "original_name": "Next setting",
+        "platform": "sun",
+        "supported_features": 0,
+        "translation_key": "next_setting",
+        "unique_id": "9a8e75591200690e446f4acfea9f2057-next_setting",
+        "previous_unique_id": null,
+        "unit_of_measurement": null
+      },
+      {
+        "aliases": [],
+        "area_id": null,
+        "capabilities": {
+          "state_class": "measurement"
+        },
+        "config_entry_id": "9a8e75591200690e446f4acfea9f2057",
+        "device_class": null,
+        "device_id": "d98dd1f68219e9d63be86353478d5c42",
+        "disabled_by": "integration",
+        "entity_category": "diagnostic",
+        "entity_id": "sensor.sun_solar_elevation",
+        "hidden_by": null,
+        "icon": null,
+        "id": "c2b8bdb9cac691419d9e7741526ca5bc",
+        "has_entity_name": true,
+        "name": null,
+        "options": {
+          "conversation": {
+            "should_expose": false
+          }
+        },
+        "original_device_class": null,
+        "original_icon": null,
+        "original_name": "Solar elevation",
+        "platform": "sun",
+        "supported_features": 0,
+        "translation_key": "solar_elevation",
+        "unique_id": "9a8e75591200690e446f4acfea9f2057-solar_elevation",
+        "previous_unique_id": null,
+        "unit_of_measurement": "°"
+      },
+      {
+        "aliases": [],
+        "area_id": null,
+        "capabilities": {
+          "state_class": "measurement"
+        },
+        "config_entry_id": "9a8e75591200690e446f4acfea9f2057",
+        "device_class": null,
+        "device_id": "d98dd1f68219e9d63be86353478d5c42",
+        "disabled_by": "integration",
+        "entity_category": "diagnostic",
+        "entity_id": "sensor.sun_solar_azimuth",
+        "hidden_by": null,
+        "icon": null,
+        "id": "2a85858bb1e26778236de3d04ea79740",
+        "has_entity_name": true,
+        "name": null,
+        "options": {
+          "conversation": {
+            "should_expose": false
+          }
+        },
+        "original_device_class": null,
+        "original_icon": null,
+        "original_name": "Solar azimuth",
+        "platform": "sun",
+        "supported_features": 0,
+        "translation_key": "solar_azimuth",
+        "unique_id": "9a8e75591200690e446f4acfea9f2057-solar_azimuth",
+        "previous_unique_id": null,
+        "unit_of_measurement": "°"
+      },
+      {
+        "aliases": [],
+        "area_id": null,
+        "capabilities": null,
+        "config_entry_id": "9a8e75591200690e446f4acfea9f2057",
+        "device_class": null,
+        "device_id": "d98dd1f68219e9d63be86353478d5c42",
+        "disabled_by": "integration",
+        "entity_category": "diagnostic",
+        "entity_id": "sensor.sun_solar_rising",
+        "hidden_by": null,
+        "icon": null,
+        "id": "44acb4ca11de9cca1260a2a6f0792828",
+        "has_entity_name": true,
+        "name": null,
+        "options": {
+          "conversation": {
+            "should_expose": false
+          }
+        },
+        "original_device_class": null,
+        "original_icon": null,
+        "original_name": "Solar rising",
+        "platform": "sun",
+        "supported_features": 0,
+        "translation_key": "solar_rising",
+        "unique_id": "9a8e75591200690e446f4acfea9f2057-solar_rising",
+        "previous_unique_id": null,
+        "unit_of_measurement": null
+      },
+      {
+        "aliases": [],
+        "area_id": null,
+        "capabilities": null,
+        "config_entry_id": "98d2747648a3cb5f9e0e6e6ae35a87c9",
+        "device_class": null,
+        "device_id": "c9ddb04faa585d746b6f2863c6dd342d",
+        "disabled_by": null,
+        "entity_category": "config",
+        "entity_id": "button.first_magic_home_light_restart",
+        "hidden_by": null,
+        "icon": null,
+        "id": "baab1b033f112f0ee352ef4407e68348",
+        "has_entity_name": true,
+        "name": null,
+        "options": {
+          "conversation": {
+            "should_expose": false
+          }
+        },
+        "original_device_class": "restart",
+        "original_icon": null,
+        "original_name": "Restart",
+        "platform": "flux_led",
+        "supported_features": 0,
+        "translation_key": null,
+        "unique_id": "b4:e8:42:b3:cc:38_restart",
+        "previous_unique_id": null,
+        "unit_of_measurement": null
+      },
+      {
+        "aliases": [],
+        "area_id": null,
+        "capabilities": {
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "mode": "slider"
+        },
+        "config_entry_id": "98d2747648a3cb5f9e0e6e6ae35a87c9",
+        "device_class": null,
+        "device_id": "c9ddb04faa585d746b6f2863c6dd342d",
+        "disabled_by": null,
+        "entity_category": null,
+        "entity_id": "number.first_magic_home_light_effect_speed",
+        "hidden_by": null,
+        "icon": null,
+        "id": "5e70937a407ea9599c187320f94965f2",
+        "has_entity_name": true,
+        "name": null,
+        "options": {
+          "conversation": {
+            "should_expose": false
+          }
+        },
+        "original_device_class": null,
+        "original_icon": "mdi:speedometer",
+        "original_name": "Effect speed",
+        "platform": "flux_led",
+        "supported_features": 0,
+        "translation_key": "effect_speed",
+        "unique_id": "b4:e8:42:b3:cc:38",
+        "previous_unique_id": null,
+        "unit_of_measurement": null
+      },
+      {
+        "aliases": [],
+        "area_id": null,
+        "capabilities": {
+          "options": [
+            "RGB&W",
+            "RGB/W"
+          ]
+        },
+        "config_entry_id": "98d2747648a3cb5f9e0e6e6ae35a87c9",
+        "device_class": null,
+        "device_id": "c9ddb04faa585d746b6f2863c6dd342d",
+        "disabled_by": null,
+        "entity_category": "config",
+        "entity_id": "select.first_magic_home_light_operating_mode",
+        "hidden_by": null,
+        "icon": null,
+        "id": "b595116becb3f6c9689ab4dc11e2ec1a",
+        "has_entity_name": true,
+        "name": null,
+        "options": {
+          "conversation": {
+            "should_expose": false
+          }
+        },
+        "original_device_class": null,
+        "original_icon": null,
+        "original_name": "Operating mode",
+        "platform": "flux_led",
+        "supported_features": 0,
+        "translation_key": "operating_mode",
+        "unique_id": "b4:e8:42:b3:cc:38_operating_mode",
+        "previous_unique_id": null,
+        "unit_of_measurement": null
+      },
+      {
+        "aliases": [],
+        "area_id": null,
+        "capabilities": {
+          "options": [
+            "RGBW",
+            "GRBW",
+            "BRGW"
+          ]
+        },
+        "config_entry_id": "98d2747648a3cb5f9e0e6e6ae35a87c9",
+        "device_class": null,
+        "device_id": "c9ddb04faa585d746b6f2863c6dd342d",
+        "disabled_by": null,
+        "entity_category": "config",
+        "entity_id": "select.first_magic_home_light_wiring",
+        "hidden_by": null,
+        "icon": null,
+        "id": "4511234a6ca5f9cc66d7096e0c79a3cf",
+        "has_entity_name": true,
+        "name": null,
+        "options": {
+          "conversation": {
+            "should_expose": false
+          }
+        },
+        "original_device_class": null,
+        "original_icon": "mdi:led-strip-variant",
+        "original_name": "Wiring",
+        "platform": "flux_led",
+        "supported_features": 0,
+        "translation_key": "wiring",
+        "unique_id": "b4:e8:42:b3:cc:38_wiring",
+        "previous_unique_id": null,
+        "unit_of_measurement": null
+      },
+      {
+        "aliases": [],
+        "area_id": null,
+        "capabilities": null,
+        "config_entry_id": "98d2747648a3cb5f9e0e6e6ae35a87c9",
+        "device_class": null,
+        "device_id": "c9ddb04faa585d746b6f2863c6dd342d",
+        "disabled_by": null,
+        "entity_category": "config",
+        "entity_id": "switch.first_magic_home_light_remote_access",
+        "hidden_by": null,
+        "icon": null,
+        "id": "c2d952e734f8a5fef3ceee4b7826d551",
+        "has_entity_name": true,
+        "name": null,
+        "options": {
+          "conversation": {
+            "should_expose": false
+          }
+        },
+        "original_device_class": null,
+        "original_icon": "mdi:cloud-outline",
+        "original_name": "Remote access",
+        "platform": "flux_led",
+        "supported_features": 0,
+        "translation_key": "remote_access",
+        "unique_id": "b4:e8:42:b3:cc:38_remote_access",
+        "previous_unique_id": null,
+        "unit_of_measurement": null
+      },
+      {
+        "aliases": [],
+        "area_id": null,
+        "capabilities": null,
+        "config_entry_id": "235943957e397cd0ea4d4a8745e4b217",
+        "device_class": null,
+        "device_id": "42b167768be2030d355dba9e2fa480ef",
+        "disabled_by": null,
+        "entity_category": "config",
+        "entity_id": "button.controller_rgbw_b3cc30_restart",
+        "hidden_by": null,
+        "icon": null,
+        "id": "83dc1e99189c53dc586923b189879ed0",
+        "has_entity_name": true,
+        "name": null,
+        "options": {
+          "conversation": {
+            "should_expose": false
+          }
+        },
+        "original_device_class": "restart",
+        "original_icon": null,
+        "original_name": "Restart",
+        "platform": "flux_led",
+        "supported_features": 0,
+        "translation_key": null,
+        "unique_id": "b4:e8:42:b3:cc:30_restart",
+        "previous_unique_id": null,
+        "unit_of_measurement": null
+      },
+      {
+        "aliases": [],
+        "area_id": null,
+        "capabilities": {
+          "effect_list": [
+            "blue_fade",
+            "blue_strobe",
+            "colorjump",
+            "colorloop",
+            "colorstrobe",
+            "cyan_fade",
+            "cyan_strobe",
+            "cycle_rgb",
+            "cycle_seven_colors",
+            "gb_cross_fade",
+            "green_fade",
+            "green_strobe",
+            "purple_fade",
+            "purple_strobe",
+            "rb_cross_fade",
+            "red_fade",
+            "red_strobe",
+            "rg_cross_fade",
+            "rgb_cross_fade",
+            "white_fade",
+            "white_strobe",
+            "yellow_fade",
+            "yellow_strobe",
+            "random"
+          ],
+          "supported_color_modes": [
+            "rgb",
+            "white"
+          ]
+        },
+        "config_entry_id": "235943957e397cd0ea4d4a8745e4b217",
+        "device_class": null,
+        "device_id": "42b167768be2030d355dba9e2fa480ef",
+        "disabled_by": null,
+        "entity_category": null,
+        "entity_id": "light.controller_rgbw_b3cc30",
+        "hidden_by": null,
+        "icon": null,
+        "id": "9975859f2c3a0dec67722b011357c8be",
+        "has_entity_name": true,
+        "name": null,
+        "options": {
+          "conversation": {
+            "should_expose": true
+          }
+        },
+        "original_device_class": null,
+        "original_icon": null,
+        "original_name": null,
+        "platform": "flux_led",
+        "supported_features": 36,
+        "translation_key": null,
+        "unique_id": "b4:e8:42:b3:cc:30",
+        "previous_unique_id": null,
+        "unit_of_measurement": null
+      },
+      {
+        "aliases": [],
+        "area_id": null,
+        "capabilities": {
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "mode": "slider"
+        },
+        "config_entry_id": "235943957e397cd0ea4d4a8745e4b217",
+        "device_class": null,
+        "device_id": "42b167768be2030d355dba9e2fa480ef",
+        "disabled_by": null,
+        "entity_category": null,
+        "entity_id": "number.controller_rgbw_b3cc30_effect_speed",
+        "hidden_by": null,
+        "icon": null,
+        "id": "5cf55a41236a84b16e9d2adae52253e2",
+        "has_entity_name": true,
+        "name": null,
+        "options": {
+          "conversation": {
+            "should_expose": false
+          }
+        },
+        "original_device_class": null,
+        "original_icon": "mdi:speedometer",
+        "original_name": "Effect speed",
+        "platform": "flux_led",
+        "supported_features": 0,
+        "translation_key": "effect_speed",
+        "unique_id": "b4:e8:42:b3:cc:30",
+        "previous_unique_id": null,
+        "unit_of_measurement": null
+      },
+      {
+        "aliases": [],
+        "area_id": null,
+        "capabilities": {
+          "options": [
+            "RGB&W",
+            "RGB/W"
+          ]
+        },
+        "config_entry_id": "235943957e397cd0ea4d4a8745e4b217",
+        "device_class": null,
+        "device_id": "42b167768be2030d355dba9e2fa480ef",
+        "disabled_by": null,
+        "entity_category": "config",
+        "entity_id": "select.controller_rgbw_b3cc30_operating_mode",
+        "hidden_by": null,
+        "icon": null,
+        "id": "8c3c3917e473510dc558b082a4ebd0b7",
+        "has_entity_name": true,
+        "name": null,
+        "options": {
+          "conversation": {
+            "should_expose": false
+          }
+        },
+        "original_device_class": null,
+        "original_icon": null,
+        "original_name": "Operating mode",
+        "platform": "flux_led",
+        "supported_features": 0,
+        "translation_key": "operating_mode",
+        "unique_id": "b4:e8:42:b3:cc:30_operating_mode",
+        "previous_unique_id": null,
+        "unit_of_measurement": null
+      },
+      {
+        "aliases": [],
+        "area_id": null,
+        "capabilities": {
+          "options": [
+            "RGBW",
+            "GRBW",
+            "BRGW"
+          ]
+        },
+        "config_entry_id": "235943957e397cd0ea4d4a8745e4b217",
+        "device_class": null,
+        "device_id": "42b167768be2030d355dba9e2fa480ef",
+        "disabled_by": null,
+        "entity_category": "config",
+        "entity_id": "select.controller_rgbw_b3cc30_wiring",
+        "hidden_by": null,
+        "icon": null,
+        "id": "b1d0e35d0cf2e20aceb9cd80f69e9c4e",
+        "has_entity_name": true,
+        "name": null,
+        "options": {
+          "conversation": {
+            "should_expose": false
+          }
+        },
+        "original_device_class": null,
+        "original_icon": "mdi:led-strip-variant",
+        "original_name": "Wiring",
+        "platform": "flux_led",
+        "supported_features": 0,
+        "translation_key": "wiring",
+        "unique_id": "b4:e8:42:b3:cc:30_wiring",
+        "previous_unique_id": null,
+        "unit_of_measurement": null
+      },
+      {
+        "aliases": [],
+        "area_id": null,
+        "capabilities": null,
+        "config_entry_id": "235943957e397cd0ea4d4a8745e4b217",
+        "device_class": null,
+        "device_id": "42b167768be2030d355dba9e2fa480ef",
+        "disabled_by": null,
+        "entity_category": "config",
+        "entity_id": "switch.controller_rgbw_b3cc30_remote_access",
+        "hidden_by": null,
+        "icon": null,
+        "id": "dc847640c6f30d1a67839e7729d95ce3",
+        "has_entity_name": true,
+        "name": null,
+        "options": {
+          "conversation": {
+            "should_expose": false
+          }
+        },
+        "original_device_class": null,
+        "original_icon": "mdi:cloud-outline",
+        "original_name": "Remote access",
+        "platform": "flux_led",
+        "supported_features": 0,
+        "translation_key": "remote_access",
+        "unique_id": "b4:e8:42:b3:cc:30_remote_access",
+        "previous_unique_id": null,
+        "unit_of_measurement": null
+      }
+    ],
+    "deleted_entities": []
+  }
+}

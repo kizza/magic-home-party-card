@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace",
+  "data": {
+    "config": {
+      "title": "Home",
+      "views": [
+        {
+          "cards": [
+            {
+              "speed": 20,
+              "colours": [
+                [
+                  0,
+                  191,
+                  255
+                ],
+                [
+                  138,
+                  43,
+                  226
+                ]
+              ],
+              "type": "custom:magic-home-party-card",
+              "targets": {}
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

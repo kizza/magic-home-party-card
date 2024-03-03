@@ -1,0 +1,71 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "core.config_entries",
+  "data": {
+    "entries": [
+      {
+        "entry_id": "98d2747648a3cb5f9e0e6e6ae35a87c9",
+        "version": 1,
+        "minor_version": 1,
+        "domain": "flux_led",
+        "title": "First magic home light",
+        "data": {
+          "host": "192.168.144.193",
+          "remote_access_enabled": true,
+          "remote_access_host": "ra8816us.magichue.net",
+          "remote_access_port": 8816,
+          "minor_version": 49,
+          "model": "AK001-ZJ2147",
+          "model_num": 6,
+          "model_info": "ZG-BL",
+          "model_description": "Controller RGBW"
+        },
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "user",
+        "unique_id": "b4:e8:42:b3:cc:38",
+        "disabled_by": null
+      },
+      {
+        "entry_id": "9a8e75591200690e446f4acfea9f2057",
+        "version": 1,
+        "minor_version": 1,
+        "domain": "sun",
+        "title": "Sun",
+        "data": {},
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "import",
+        "unique_id": null,
+        "disabled_by": null
+      },
+      {
+        "entry_id": "235943957e397cd0ea4d4a8745e4b217",
+        "version": 1,
+        "minor_version": 1,
+        "domain": "flux_led",
+        "title": "Controller RGBW B3CC30",
+        "data": {
+          "host": "172.10.0.10",
+          "remote_access_enabled": true,
+          "remote_access_host": "dn8816us02.magichue.net",
+          "remote_access_port": 8816,
+          "minor_version": 49,
+          "model": "AK001-ZJ2147",
+          "model_num": 6,
+          "model_info": "ZG-BL",
+          "model_description": "Controller RGBW"
+        },
+        "options": {},
+        "pref_disable_new_entities": false,
+        "pref_disable_polling": false,
+        "source": "integration_discovery",
+        "unique_id": "b4:e8:42:b3:cc:30",
+        "disabled_by": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "core.restore_state",
+  "data": [
+    {
+      "state": {"entity_id":"person.tester","state":"unknown","attributes":{"editable":true,"id":"tester","user_id":"18e2f19a0a344dd9b777686d632ef662","device_trackers":[],"friendly_name":"Tester"},"last_changed":"2024-02-28T02:47:44.629954+00:00","last_updated":"2024-02-28T02:47:45.709159+00:00","context":{"id":"01HQPSRRSDK3WCDRZQADJVMDRH","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2024-02-28T02:48:01.565840+00:00"
+    }
+  ]
+}

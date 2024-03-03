@@ -1,0 +1,64 @@
+version: '3'
+services:
+  homeassistant:
+    container_name: magic-card-homeassistant
+    image: homeassistant/home-assistant:beta
+    volumes:
+      - ./homeassistant/config/configuration.yaml:/config/configuration.yaml
+      # - ./homeassistant/config/.storage:/config/.storage
+      # - ./homeassistant/config:/config
+      - ./../dist/magic-home-party-card.js:/config/www/magic-home-party-card.js
+    # restart: unless-stopped
+    restart: no
+    privileged: true
+    network_mode: host
+
+  device1:
+    container_name: magic-card-device1
+    depends_on:
+      - homeassistant
+    build: ./device
+    ports:
+      - "48899:48899/udp"
+      - "5577:5577/tcp"
+    environment:
+      IP_ADDRESS: 172.10.0.10
+      DEVICE_ID: B4E842B3CC30
+    privileged: true
+    networks:
+      default:
+        ipv4_address: 172.10.0.10
+
+  # e2e:
+  #   image: cypress/base
+  #   build: ./cypress
+  #   container_name: magic-home-cypress
+  #   privileged: true
+  #   depends_on:
+  #     - homeassistant
+  #   # note: inside e2e container, the network allows accessing
+  #   # "web" host under name "web"
+  #   # so "curl http://web" would return whatever the webserver
+  #   # in the "web" container is cooking
+  #   # see https://docs.docker.com/compose/networking/
+  #   environment:
+  #     - CYPRESS_baseUrl=http://web:8123
+  #   command: npx cypress run
+  #   # mount the host directory e2e/cypress and the file e2e/cypress.config.js as
+  #   # volumes within the container
+  #   # this means that:
+  #   #  1. anything that Cypress writes to these folders (e.g., screenshots,
+  #   #     videos) appears also on the Docker host's filesystem
+  #   #  2. any change that the developer applies to Cypress files on the host
+  #   #     machine immediately takes effect within the e2e container (no docker
+  #   #     rebuild required).
+  #   volumes:
+  #     - ./cypress:/app/cypress
+  #     # - ./cypress.config.ts:/app/cypress.config.ts
+
+networks:
+  default:
+    ipam:
+      config:
+        - subnet: 172.10.0.0/24
+          gateway: 172.10.0.1

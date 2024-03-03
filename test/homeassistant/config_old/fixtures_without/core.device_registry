@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "minor_version": 4,
+  "key": "core.device_registry",
+  "data": {
+    "devices": [
+      {
+        "area_id": "living_room",
+        "config_entries": [
+          "98d2747648a3cb5f9e0e6e6ae35a87c9"
+        ],
+        "configuration_url": null,
+        "connections": [
+          [
+            "mac",
+            "b4:e8:42:b3:cc:38"
+          ]
+        ],
+        "disabled_by": null,
+        "entry_type": null,
+        "hw_version": "AK001-ZJ2147",
+        "id": "c9ddb04faa585d746b6f2863c6dd342d",
+        "identifiers": [
+          [
+            "flux_led",
+            "98d2747648a3cb5f9e0e6e6ae35a87c9"
+          ]
+        ],
+        "manufacturer": "Zengge",
+        "model": "Controller RGBW (0x06)",
+        "name_by_user": null,
+        "name": "First magic light device",
+        "serial_number": null,
+        "sw_version": "3.31",
+        "via_device_id": null
+      }
+    ],
+    "deleted_devices": []
+  }
+}
