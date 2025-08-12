@@ -1,7 +1,7 @@
 {
   "name": "MagicHomeParty",
-  "version": "0.0.1",
-  "description": "Have a party with your magic home lights",
+  "version": "0.1.5",
+  "description": "Easily play and choose colors to for your MagicHome lights",
   "main": "index.ts",
   "author": "Kizza",
   "license": "MIT",

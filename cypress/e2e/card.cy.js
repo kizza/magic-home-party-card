@@ -171,7 +171,7 @@ describe('magic home party', () => {
             .should(
               () => {
                 expect(hass.callService).to.be.calledWith('light', 'turn_on', {
-                  target: {entity_id: cardConfig.entities},
+                  entity_id: cardConfig.entities,
                   rgb_color: yellow,
                 });
               },

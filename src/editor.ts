@@ -79,7 +79,7 @@ export class MagicHomePartyEditor extends LitElement {
 
   private _setLight = (colour: Colour) =>
     this.hass.callService('light', 'turn_on', {
-      target: this.config.targets,
+      ...this.config.targets,
       rgb_color: colour,
     });
 

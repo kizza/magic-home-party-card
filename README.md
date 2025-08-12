@@ -43,3 +43,8 @@ Magic Home Party Card is available in [HACS][hacs] (Home Assistant Community Sto
 ## Usage
 
 Once installed you should find it within your available dashboard cards.  Add-and-remove selected colors by double clicking (single click previews that colour with your lights).  Once setup, click anywhere on the card to run the [magic light effect](https://www.home-assistant.io/integrations/flux_led/#custom-effects---service-flux_ledset_custom_effect) with your configuration.
+
+## Development
+
+Build with `yarn start` which will expose the built `/dist` via the configured port.
+Add this url to your resources.yaml (tip: with ?v=xxx for caching) then play.
