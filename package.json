@@ -1,7 +1,7 @@
 {
   "name": "MagicHomeParty",
   "version": "0.1.5",
-  "description": "Easily play and choose colors to for your MagicHome lights",
+  "description": "Build beautiful multi-step colour fades for your MagicHome lights in seconds",
   "main": "index.ts",
   "author": "Kizza",
   "license": "MIT",
